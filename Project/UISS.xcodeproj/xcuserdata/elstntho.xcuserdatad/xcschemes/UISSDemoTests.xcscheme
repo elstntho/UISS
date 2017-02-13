@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E1B438AE143F668000F87518"
-               BuildableName = "libUISS.a"
-               BlueprintName = "UISS"
+               BlueprintIdentifier = "E1ED8C0A1450D4E200302B61"
+               BuildableName = "UISSDemoTests.xctest"
+               BlueprintName = "UISSDemoTests"
                ReferencedContainer = "container:UISS.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E1B438AE143F668000F87518"
-            BuildableName = "libUISS.a"
-            BlueprintName = "UISS"
+            BlueprintIdentifier = "E1ED8C0A1450D4E200302B61"
+            BuildableName = "UISSDemoTests.xctest"
+            BlueprintName = "UISSDemoTests"
             ReferencedContainer = "container:UISS.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "E1ED8C0A1450D4E200302B61"
+            BuildableName = "UISSDemoTests.xctest"
+            BlueprintName = "UISSDemoTests"
+            ReferencedContainer = "container:UISS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
