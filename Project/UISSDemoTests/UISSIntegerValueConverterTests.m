@@ -23,22 +23,22 @@
 
 - (void)testUnsignedInteger; {
     id value = [self.converter convertValue:@10U];
-    XCTAssertTrue([value isKindOfClass:[NSValue class]], nil);
+    XCTAssertTrue([value isKindOfClass:[NSValue class]]);
 
     NSUInteger unsignedIntegerValue = 0;
     [value getValue:&unsignedIntegerValue];
 
-    XCTAssertEqual(unsignedIntegerValue, (NSUInteger) 10, nil);
+    XCTAssertEqual(unsignedIntegerValue, (NSUInteger) 10);
 }
 
 - (void)testInteger; {
     id value = [self.converter convertValue:@-10];
-    XCTAssertTrue([value isKindOfClass:[NSValue class]], nil);
+    XCTAssertTrue([value isKindOfClass:[NSValue class]]);
 
     NSInteger integerValue = 0;
     [value getValue:&integerValue];
 
-    XCTAssertEqual(integerValue, (NSInteger) -10, nil);
+    XCTAssertEqual(integerValue, (NSInteger) -10);
 }
 
 @end

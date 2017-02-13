@@ -76,10 +76,10 @@
         }
 
         if ([array canConvertToFloatObjectAtIndex:1]) {
-            fontSize = [array[1] floatValue];
+            fontSize = [array[1] doubleValue];
         }
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        fontSize = [value floatValue];
+        fontSize = [value doubleValue];
     } else if ([value isKindOfClass:[NSString class]]) {
         fontName = value;
     }

@@ -24,8 +24,8 @@
     [self.uiss generateCodeForUserInterfaceIdiom:UIUserInterfaceIdiomPad
                                      codeHandler:^(NSString *code, NSArray *errors) {
                                          XCTAssertTrue(errors.count == 0, @"errors are unexpected");
-                                         XCTAssertNotNil(code, nil);
-                                         XCTAssertTrue([code rangeOfString:@"[[UINavigationBar appearance] setTintColor:[UIColor greenColor]];"].location != NSNotFound, nil);
+                                         XCTAssertNotNil(code);
+                                         XCTAssertTrue([code rangeOfString:@"[[UINavigationBar appearance] setTintColor:[UIColor greenColor]];"].location != NSNotFound);
                                      }];
 }
 
@@ -33,40 +33,40 @@
     [self.uiss generateCodeForUserInterfaceIdiom:UIUserInterfaceIdiomPhone
                                      codeHandler:^(NSString *code, NSArray *errors) {
                                          XCTAssertTrue(errors.count == 0, @"errors are unexpected");
-                                         XCTAssertNotNil(code, nil);
-                                         XCTAssertTrue([code rangeOfString:@"[[UINavigationBar appearance] setTintColor:[UIColor redColor]];"].location != NSNotFound, nil);
+                                         XCTAssertNotNil(code);
+                                         XCTAssertTrue([code rangeOfString:@"[[UINavigationBar appearance] setTintColor:[UIColor redColor]];"].location != NSNotFound);
                                      }];
 }
 
 - (void)testToolbarTintColor; {
-    XCTAssertEqualObjects([[UIToolbar appearance] tintColor], [UIColor yellowColor], nil);
+    XCTAssertEqualObjects([[UIToolbar appearance] tintColor], [UIColor yellowColor]);
 }
 
 - (void)testToolbarBackgroundImage; {
     UIImage *backgroundImage = [[UIToolbar appearance] backgroundImageForToolbarPosition:UIToolbarPositionAny
                                                                               barMetrics:UIBarMetricsDefault];
-    XCTAssertNotNil(backgroundImage, nil);
-    XCTAssertEqualObjects([backgroundImage class], [UIImage class], @"bad property class", nil);
+    XCTAssertNotNil(backgroundImage);
+    XCTAssertEqualObjects([backgroundImage class], [UIImage class], @"bad property class");
 }
 
 - (void)testTabBarItemTitlePositionAdjustment; {
     UIOffset titlePositionAdjustment = [[UITabBarItem appearance] titlePositionAdjustment];
-    XCTAssertEqual(titlePositionAdjustment, UIOffsetMake(10, 10), nil);
+    XCTAssertTrue(UIOffsetEqualToOffset(titlePositionAdjustment, UIOffsetMake(10, 10)));
 }
 
 - (void)testNavigationBarTitleVerticalPositionAdjustment; {
-    XCTAssertEqual([[UINavigationBar appearance] titleVerticalPositionAdjustmentForBarMetrics:UIBarMetricsDefault], 10.0f, nil);
+    XCTAssertEqual([[UINavigationBar appearance] titleVerticalPositionAdjustmentForBarMetrics:UIBarMetricsDefault], 10.0f);
 }
 
-- (void)testNavigationBarBackgroundImageForBarMetricsLandscapePhone; {
-    XCTAssertNotNil([[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsLandscapePhone], nil);
+- (void)testNavigationBarBackgroundImageForBarMetricsCompact; {
+    XCTAssertNil([[UINavigationBar appearance] backgroundImageForBarMetrics:UIBarMetricsCompact]);
 }
 
 - (void)testTabBarItemTitleTextAttributes; {
-    UIFont *font = [[UITabBarItem appearance] titleTextAttributesForState:UIControlStateNormal][UITextAttributeFont];
-    XCTAssertNotNil(font, nil);
+    UIFont *font = [[UITabBarItem appearance] titleTextAttributesForState:UIControlStateNormal][NSFontAttributeName];
+    XCTAssertNotNil(font);
     if (font) {
-        XCTAssertEqualObjects(font, [UIFont systemFontOfSize:24], nil);
+        XCTAssertEqualObjects(font, [UIFont systemFontOfSize:24]);
     }
 }
 

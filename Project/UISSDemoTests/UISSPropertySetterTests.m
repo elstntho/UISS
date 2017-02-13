@@ -19,7 +19,7 @@
     property.name = @"tintColor";
     propertySetter.property = property;
 
-    XCTAssertEqual(propertySetter.selector, @selector(setTintColor:), nil);
+    XCTAssertEqual(propertySetter.selector, @selector(setTintColor:));
 }
 
 - (void)testAccessingSelectorWithOneAxisParameter; {
@@ -33,7 +33,7 @@
     UISSAxisParameter *axisParameter = [[UISSAxisParameter alloc] init];
     propertySetter.axisParameters = @[axisParameter];
 
-    XCTAssertEqual(propertySetter.selector, @selector(setTitleColor:forState:), nil);
+    XCTAssertEqual(propertySetter.selector, @selector(setTitleColor:forState:));
 }
 
 - (void)testAccessingSelectorWithTwoAxisParameters; {
@@ -49,7 +49,7 @@
 
     propertySetter.axisParameters = @[axisParameter1, axisParameter2];
 
-    XCTAssertEqual(propertySetter.selector, @selector(setBackgroundImage:forState:barMetrics:), nil);
+    XCTAssertEqual(propertySetter.selector, @selector(setBackgroundImage:forState:barMetrics:));
 }
 
 - (void)testShouldFailToRecognizeSelectorIfThereAreToManyAxisParameters; {
@@ -65,7 +65,7 @@
 
     propertySetter.axisParameters = @[axisParameter1, axisParameter2];
 
-    XCTAssertEqual(propertySetter.selector, (SEL) NULL, nil);
+    XCTAssertEqual(propertySetter.selector, (SEL) NULL);
 }
 
 #pragma mark - Code Generation & Invocations
@@ -80,16 +80,16 @@
 
     propertySetter.property = tintColorProperty;
 
-    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearance] setTintColor:[UIColor whiteColor]];", nil);
+    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearance] setTintColor:[UIColor whiteColor]];");
 
     NSInvocation *invocation = propertySetter.invocation;
-    XCTAssertNotNil(invocation, nil);
+    XCTAssertNotNil(invocation);
 }
 
 - (void)testSimplePropertyWithContainment; {
     UISSPropertySetter *propertySetter = [[UISSPropertySetter alloc] init];
     propertySetter.appearanceClass = [UIToolbar class];
-    propertySetter.containment = @[[UIPopoverController class]];
+    propertySetter.containment = @[[UINavigationController class]];
 
     UISSProperty *tintColorProperty = [[UISSProperty alloc] init];
     tintColorProperty.name = @"tintColor";
@@ -97,13 +97,13 @@
 
     propertySetter.property = tintColorProperty;
 
-    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearanceWhenContainedIn:[UIPopoverController class], nil] setTintColor:[UIColor whiteColor]];", nil);
+    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearanceWhenContainedIn:[UINavigationController class], nil] setTintColor:[UIColor whiteColor]];");
 }
 
 - (void)testSimplePropertyWithDeepContainment; {
     UISSPropertySetter *propertySetter = [[UISSPropertySetter alloc] init];
     propertySetter.appearanceClass = [UIToolbar class];
-    propertySetter.containment = @[[UIPopoverController class], [UIView class]];
+    propertySetter.containment = @[[UINavigationController class], [UIView class]];
 
     UISSProperty *tintColorProperty = [[UISSProperty alloc] init];
     tintColorProperty.name = @"tintColor";
@@ -111,7 +111,7 @@
 
     propertySetter.property = tintColorProperty;
 
-    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearanceWhenContainedIn:[UIView class], [UIPopoverController class], nil] setTintColor:[UIColor whiteColor]];", nil);
+    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIToolbar appearanceWhenContainedIn:[UIView class], [UINavigationController class], nil] setTintColor:[UIColor whiteColor]];");
 }
 
 - (void)testPropertyWithAxisParameter; {
@@ -128,7 +128,7 @@
     propertySetter.property = tintColorProperty;
     propertySetter.axisParameters = @[axisParameter];
 
-    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(10.0, 10.0) forBarMetrics:UIBarMetricsDefault];", nil);
+    XCTAssertEqualObjects(propertySetter.generatedCode, @"[[UIBarButtonItem appearance] setTitlePositionAdjustment:UIOffsetMake(10.0, 10.0) forBarMetrics:UIBarMetricsDefault];");
 }
 
 @end

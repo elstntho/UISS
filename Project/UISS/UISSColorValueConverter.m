@@ -136,7 +136,7 @@
                                 colorHandler:^(UIColor *color) {
                                     if (colorHandler) {
                                         if (array.count > 1) {
-                                            alpha = [[array objectAtIndex:1] floatValue];
+                                            alpha = [[array objectAtIndex:1] doubleValue];
                                             colorHandler([color colorWithAlphaComponent:alpha]);
                                         }
                                     }
@@ -144,7 +144,7 @@
                                  codeHandler:^(NSString *code) {
                                      if (codeHandler) {
                                          if (array.count > 1) {
-                                             alpha = [[array objectAtIndex:1] floatValue];
+                                             alpha = [[array objectAtIndex:1] doubleValue];
                                              codeHandler([NSString stringWithFormat:@"[%@ colorWithAlphaComponent:%@]",
                                                                                     code,
                                                                                     [self.floatValueConverter generateCodeForFloatValue:alpha]]);
@@ -153,17 +153,17 @@
                                  }];
             } else {
                 if ([array canConvertToIntObjectAtIndex:0]) {
-                    red = [array[0] floatValue];
+                    red = [array[0] doubleValue];
                 }
 
                 if ([array canConvertToIntObjectAtIndex:1]) {
-                    green = [array[1] floatValue];
+                    green = [array[1] doubleValue];
 
                     if ([array canConvertToIntObjectAtIndex:2]) {
-                        blue = [array[2] floatValue];
+                        blue = [array[2] doubleValue];
 
                         if ([array canConvertToFloatObjectAtIndex:3]) {
-                            alpha = [array[3] floatValue];
+                            alpha = [array[3] doubleValue];
                         }
                     }
                 }

@@ -35,10 +35,12 @@
 
 - (void)testValue:(id)value expectedOffset:(UIOffset)expectedOffset expectedCode:(NSString *)expectedCode; {
     id converted = [self.converter convertValue:value];
-    XCTAssertEqual([converted UIOffsetValue], expectedOffset, nil);
+    UIOffset convertedOffsetValue = [converted UIOffsetValue];
+    XCTAssertEqualWithAccuracy(convertedOffsetValue.horizontal, expectedOffset.horizontal, 0.000001);
+    XCTAssertEqualWithAccuracy(convertedOffsetValue.vertical, expectedOffset.vertical, 0.000001);
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 @end

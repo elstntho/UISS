@@ -33,10 +33,10 @@
 
 - (void)testValue:(id)value expectedSize:(CGSize)expectedSize expectedCode:(NSString *)expectedCode; {
     id converted = [self.converter convertValue:value];
-    XCTAssertEqual([converted CGSizeValue], expectedSize, nil);
+    XCTAssertTrue(CGSizeEqualToSize([converted CGSizeValue], expectedSize));
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 @end

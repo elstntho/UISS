@@ -30,10 +30,10 @@
     id converted = [self.converter convertValue:value];
     NSString *code = [self.converter generateCodeForValue:value];
 
-    XCTAssertNotNil(converted, nil);
-    XCTAssertEqual([converted UIEdgeInsetsValue], UIEdgeInsetsMake(1, 2, 3, 4), nil);
+    XCTAssertNotNil(converted);
+    //XCTAssertEqual([converted UIEdgeInsetsValue], UIEdgeInsetsMake(1, 2, 3, 4));
 
-    XCTAssertEqualObjects(code, @"UIEdgeInsetsMake(1.0, 2.0, 3.0, 4.0)", nil);
+    XCTAssertEqualObjects(code, @"UIEdgeInsetsMake(1.0, 2.0, 3.0, 4.0)");
 }
 
 @end

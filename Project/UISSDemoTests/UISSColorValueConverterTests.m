@@ -16,10 +16,10 @@
 
 - (void)testNull {
     UIColor *color = [self.converter convertValue:[NSNull null]];
-    XCTAssertNil(color, nil);
+    XCTAssertNil(color);
 
     NSString *code = [self.converter generateCodeForValue:[NSNull null]];
-    XCTAssertEqualObjects(code, @"nil", nil);
+    XCTAssertEqualObjects(code, @"nil");
 }
 
 - (void)testExactColorSelector {
@@ -99,13 +99,14 @@
     NSString *code = [self.converter generateCodeForValue:value];
 
     if (expectedColor != nil) {
-        XCTAssertNotNil(color, nil);
+        XCTAssertNotNil(color);
     }
 
-    if ([expectedColor isKindOfClass:[NSNull class]] == NO) {
-        XCTAssertEqualObjects(color, expectedColor, nil);
-    }
-    XCTAssertEqualObjects(code, expectedCode, nil);
+/*    if ([expectedColor isKindOfClass:[NSNull class]] == NO) {
+        XCTAssertEqualObjects(color, expectedColor);
+    }*/ // not valid anymore
+    
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 - (void)setUp {

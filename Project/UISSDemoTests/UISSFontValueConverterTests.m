@@ -61,16 +61,16 @@
 - (void)testDefaultSystemItalicFont {
     UIFont *font = [self.converter convertValue:@[@"italic", @14.0f]];
 
-    XCTAssertNotNil(font, nil);
-    XCTAssertEqualObjects(font, [UIFont italicSystemFontOfSize:14], nil);
+    XCTAssertNotNil(font);
+    XCTAssertEqualObjects(font, [UIFont italicSystemFontOfSize:14]);
 }
 
 - (void)testValue:(id)value expectedFont:(UIFont *)expectedFont expectedCode:(NSString *)expectedCode {
     UIFont *font = [self.converter convertValue:value];
-    XCTAssertEqualObjects(font, expectedFont, nil);
+    XCTAssertEqualObjects(font, expectedFont);
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 - (void)setUp {

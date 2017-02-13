@@ -19,8 +19,8 @@
 
     NSDictionary *preprocessed = [self.preprocessor preprocess:dictionary userInterfaceIdiom:UIUserInterfaceIdiomPhone];
 
-    XCTAssertNotNil(preprocessed, nil);
-    XCTAssertEqualObjects(dictionary, preprocessed, nil);
+    XCTAssertNotNil(preprocessed);
+    XCTAssertEqualObjects(dictionary, preprocessed);
 }
 
 - (void)testDictionaryWithPhoneBranchOnDeviceWithPadIdiom; {
@@ -29,9 +29,9 @@
 
     NSDictionary *preprocessed = [self.preprocessor preprocess:dictionary userInterfaceIdiom:UIUserInterfaceIdiomPad];
 
-    XCTAssertNotNil(preprocessed, nil);
+    XCTAssertNotNil(preprocessed);
     XCTAssertEqual(preprocessed.count, (NSUInteger) 1, @"only one object could survive");
-    XCTAssertEqual(preprocessed[@"k1"], @"v1", nil);
+    XCTAssertEqual(preprocessed[@"k1"], @"v1");
 }
 
 - (void)testDictionaryWithPhoneAndPadBranchOnDeviceWithPhoneIdiom; {
@@ -40,9 +40,9 @@
 
     NSDictionary *preprocessed = [self.preprocessor preprocess:dictionary userInterfaceIdiom:UIUserInterfaceIdiomPhone];
 
-    XCTAssertNotNil(preprocessed, nil);
+    XCTAssertNotNil(preprocessed);
     XCTAssertEqual(preprocessed.count, (NSUInteger) 1, @"only one object could survive");
-    XCTAssertEqualObjects(preprocessed[@"phone-key"], @"phone-value", nil);
+    XCTAssertEqualObjects(preprocessed[@"phone-key"], @"phone-value");
 }
 
 - (void)testDictionaryWithNestedPhoneBranchOnPhoneIdiom; {
@@ -50,8 +50,8 @@
     NSDictionary *dictionary = @{@"root" : nestedDictionary};
 
     NSDictionary *preprocessed = [self.preprocessor preprocess:dictionary userInterfaceIdiom:UIUserInterfaceIdiomPhone];
-    XCTAssertTrue([preprocessed.allKeys containsObject:@"root"], nil);
-    XCTAssertEqualObjects(preprocessed[@"root"][@"key"], @"value", nil);
+    XCTAssertTrue([preprocessed.allKeys containsObject:@"root"]);
+    XCTAssertEqualObjects(preprocessed[@"root"][@"key"], @"value");
 }
 
 - (void)testPreprocessorShouldIgnoreLetterCase; {
@@ -60,9 +60,9 @@
 
     NSDictionary *preprocessed = [self.preprocessor preprocess:dictionary userInterfaceIdiom:UIUserInterfaceIdiomPhone];
 
-    XCTAssertNotNil(preprocessed, nil);
+    XCTAssertNotNil(preprocessed);
     XCTAssertEqual(preprocessed.count, (NSUInteger) 1, @"only one object could survive");
-    XCTAssertEqualObjects(preprocessed[@"phone-key"], @"phone-value", nil);
+    XCTAssertEqualObjects(preprocessed[@"phone-key"], @"phone-value");
 }
 
 - (void)setUp; {

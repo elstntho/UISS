@@ -24,7 +24,7 @@
 - (id)convertValue:(id)value;
 {
     if ([value isKindOfClass:[NSNumber class]]) {
-        CGFloat floatValue = [value floatValue];
+        CGFloat floatValue = [value doubleValue];
         return [NSValue value:&floatValue withObjCType:@encode(CGFloat)];
     }
     
@@ -39,8 +39,8 @@
 
 - (NSString *)generateCodeForValue:(id)value
 {
-    if ([value respondsToSelector:@selector(floatValue)]) {
-        return [self generateCodeForFloatValue:[value floatValue]];
+    if ([value respondsToSelector:@selector(doubleValue)]) {
+        return [self generateCodeForFloatValue:[value doubleValue]];
     }
 
     return nil;

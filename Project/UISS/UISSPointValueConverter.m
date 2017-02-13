@@ -35,18 +35,18 @@
         NSArray *array = (NSArray *)value;
         
         if (array.count > 0) {
-            x = [[array objectAtIndex:0] floatValue];
+            x = [[array objectAtIndex:0] doubleValue];
         }
         
         if (array.count > 1) {
-            y = [[array objectAtIndex:1] floatValue];
+            y = [[array objectAtIndex:1] doubleValue];
         } else {
             y = x;
         }
         
         return [NSValue valueWithCGPoint:CGPointMake(x, y)];
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        return [NSValue valueWithCGPoint:CGPointMake([value floatValue], [value floatValue])];
+        return [NSValue valueWithCGPoint:CGPointMake([value doubleValue], [value doubleValue])];
     }
     
     return nil;

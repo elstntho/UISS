@@ -32,10 +32,10 @@
 {
     if ([value isKindOfClass:[NSArray class]] && [value count] == 4) {
         NSArray *array = (NSArray *) value;
-        return [NSValue valueWithCGRect:CGRectMake([[array objectAtIndex:0] floatValue],
-                                                   [[array objectAtIndex:1] floatValue],
-                                                   [[array objectAtIndex:2] floatValue],
-                                                   [[array objectAtIndex:3] floatValue]
+        return [NSValue valueWithCGRect:CGRectMake([[array objectAtIndex:0] doubleValue],
+                                                   [[array objectAtIndex:1] doubleValue],
+                                                   [[array objectAtIndex:2] doubleValue],
+                                                   [[array objectAtIndex:3] doubleValue]
                                                    )];
     }
     

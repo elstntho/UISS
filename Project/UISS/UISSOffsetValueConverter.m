@@ -36,18 +36,18 @@
         CGFloat horizontal = 0, vertical = 0;
 
         if ([array canConvertToFloatObjectAtIndex:0]) {
-            horizontal = [[array objectAtIndex:0] floatValue];
+            horizontal = [[array objectAtIndex:0] doubleValue];
         }
 
         if ([array canConvertToFloatObjectAtIndex:1]) {
-            vertical = [[array objectAtIndex:1] floatValue];
+            vertical = [[array objectAtIndex:1] doubleValue];
         } else {
             vertical = horizontal;
         }
         
         return [NSValue valueWithUIOffset:UIOffsetMake(horizontal, vertical)];
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        return [NSValue valueWithUIOffset:UIOffsetMake([value floatValue], [value floatValue])];
+        return [NSValue valueWithUIOffset:UIOffsetMake([value doubleValue], [value doubleValue])];
     }
     
     return nil;

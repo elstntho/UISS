@@ -24,20 +24,20 @@
 
 - (void)testConversionFromNumber; {
     id value = [self.converter convertValue:@0.5f];
-    XCTAssertTrue([value isKindOfClass:[NSValue class]], nil);
+    XCTAssertTrue([value isKindOfClass:[NSValue class]]);
 
     CGFloat floatValue = 0;
     [value getValue:&floatValue];
 
-    XCTAssertEqual(floatValue, 0.5f, nil);
+    XCTAssertEqual(floatValue, 0.5f);
 }
 
 - (void)testGeneratedCodeFromString; {
-    XCTAssertEqualObjects([self.converter generateCodeForValue:@"1.123"], @"1.1230", nil);
+    XCTAssertEqualObjects([self.converter generateCodeForValue:@"1.123"], @"1.1230");
 }
 
 - (void)testGeneratedCodeFromNumber; {
-    XCTAssertEqualObjects([self.converter generateCodeForValue:[NSNumber numberWithFloat:1.123]], @"1.1230", nil);
+    XCTAssertEqualObjects([self.converter generateCodeForValue:[NSNumber numberWithFloat:1.123]], @"1.1230");
 }
 
 @end

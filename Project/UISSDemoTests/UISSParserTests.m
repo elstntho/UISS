@@ -29,8 +29,8 @@
     XCTAssertEqual(propertySetters.count, (NSUInteger) 1, @"expected one property setter");
 
     UISSPropertySetter *propertySetter = [propertySetters lastObject];
-    XCTAssertEqualObjects(propertySetter.group, @"Group", nil);
-    XCTAssertEqual(propertySetter.containment.count, (NSUInteger) 0, nil);
+    XCTAssertEqualObjects(propertySetter.group, @"Group");
+    XCTAssertEqual(propertySetter.containment.count, (NSUInteger) 0);
 }
 
 #pragma mark - Errors
@@ -43,8 +43,8 @@
 
     XCTAssertEqual(errors.count, (NSUInteger) 1, @"expected one error");
     NSError *error = errors.lastObject;
-    XCTAssertEqual(error.code, UISSInvalidAppearanceDictionaryError, nil);
-    XCTAssertEqualObjects((error.userInfo)[UISSInvalidAppearanceDictionaryErrorKey], dictionary, nil);
+    XCTAssertEqual(error.code, UISSInvalidAppearanceDictionaryError);
+    XCTAssertEqualObjects((error.userInfo)[UISSInvalidAppearanceDictionaryErrorKey], dictionary);
 }
 
 - (void)testUnknownClassNameWithoutContainment; {
@@ -55,8 +55,8 @@
 
     XCTAssertEqual(errors.count, (NSUInteger) 1, @"expected one error");
     NSError *error = errors.lastObject;
-    XCTAssertEqual(error.code, UISSUnknownClassError, nil);
-    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UnknownClass", nil);
+    XCTAssertEqual(error.code, UISSUnknownClassError);
+    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UnknownClass");
 }
 
 - (void)testInvalidAppearanceContainerClass; {
@@ -68,8 +68,8 @@
 
     XCTAssertEqual(errors.count, (NSUInteger) 1, @"expected one error");
     NSError *error = errors.lastObject;
-    XCTAssertEqual(error.code, UISSInvalidAppearanceContainerClassError, nil);
-    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UIBarButtonItem", nil);
+    XCTAssertEqual(error.code, UISSInvalidAppearanceContainerClassError);
+    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UIBarButtonItem");
 }
 
 - (void)testInvalidAppearanceClass; {
@@ -80,8 +80,8 @@
 
     XCTAssertEqual(errors.count, (NSUInteger) 1, @"expected one error");
     NSError *error = errors.lastObject;
-    XCTAssertEqual(error.code, UISSInvalidAppearanceClassError, nil);
-    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"NSString", nil);
+    XCTAssertEqual(error.code, UISSInvalidAppearanceClassError);
+    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"NSString");
 }
 
 - (void)testInvalidAppearanceClassInContainer; {
@@ -93,8 +93,8 @@
 
     XCTAssertEqual(errors.count, (NSUInteger) 1, @"expected one error");
     NSError *error = errors.lastObject;
-    XCTAssertEqual(error.code, UISSUnknownClassError, nil);
-    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UIBadToolbar", nil);
+    XCTAssertEqual(error.code, UISSUnknownClassError);
+    XCTAssertEqualObjects((error.userInfo)[UISSInvalidClassNameErrorKey], @"UIBadToolbar");
 }
 
 #pragma mark - Invocations
@@ -104,26 +104,11 @@
 
     [self parserTestWithDictionary:dictionary assertionsAfterInvoke:^(NSInvocation *invocation) {
         XCTAssertEqualObjects(invocation.target, [UIToolbar appearance], @"expected target to be UIToolbar appearance proxy");
-        XCTAssertEqual(invocation.selector, @selector(setTintColor:), nil);
+        XCTAssertEqual(invocation.selector, @selector(setTintColor:));
 
         UIColor *color;
         [invocation getArgument:&color atIndex:2];
-        XCTAssertEqualObjects(color, [UIColor yellowColor], nil);
-    }];
-}
-
-- (void)testLabelShadowOffset; {
-    NSDictionary *dictionary = @{@"UILabel" : @{@"shadowOffset" : @1.0f}};
-
-    [self parserTestWithDictionary:dictionary assertionsAfterInvoke:^(NSInvocation *invocation) {
-        XCTAssertEqualObjects(invocation.target, [UILabel appearance], @"expected target to be UILabel appearance proxy");
-        XCTAssertEqual(invocation.selector, @selector(setShadowOffset:), nil);
-
-        CGSize shadowOffset;
-        [invocation getArgument:&shadowOffset atIndex:2];
-        XCTAssertEqual(shadowOffset, CGSizeMake(1, 1), nil);
-
-        XCTAssertEqual([[UILabel appearance] shadowOffset], CGSizeMake(1, 1), nil);
+        XCTAssertEqualObjects(color, [UIColor yellowColor]);
     }];
 }
 
@@ -132,7 +117,7 @@
 
 
     [self parserTestWithDictionary:dictionary assertionsAfterInvoke:^(NSInvocation *invocation) {
-        XCTAssertEqualObjects([[UIButton appearance] titleColorForState:UIControlStateHighlighted], [UIColor greenColor], nil);
+        XCTAssertEqualObjects([[UIButton appearance] titleColorForState:UIControlStateHighlighted], [UIColor greenColor]);
     }];
 }
 
@@ -142,9 +127,8 @@
 
 
     [self parserTestWithDictionary:containmentDictionary assertionsAfterInvoke:^(NSInvocation *invocation) {
-        UIColor *buttonColor = [[UIButton appearanceWhenContainedIn:[UINavigationController class],
-                                                                    nil] titleColorForState:UIControlStateHighlighted];
-        XCTAssertEqualObjects(buttonColor, [UIColor greenColor], nil);
+        UIColor *buttonColor = [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UINavigationController class]]] titleColorForState:UIControlStateHighlighted];
+        XCTAssertEqualObjects(buttonColor, [UIColor greenColor]);
     }];
 }
 
@@ -154,9 +138,8 @@
     dictionary = @{@"UINavigationController" : dictionary};
 
     [self parserTestWithDictionary:dictionary assertionsAfterInvoke:^(NSInvocation *invocation) {
-        UIColor *buttonColor = [[UIButton appearanceWhenContainedIn:[UIImageView class], [UINavigationController class],
-                                                                    nil] titleColorForState:UIControlStateHighlighted];
-        XCTAssertEqualObjects(buttonColor, [UIColor yellowColor], nil);
+        UIColor *buttonColor = [[UIButton appearanceWhenContainedInInstancesOfClasses:@[[UIImageView class], [UINavigationController class]]] titleColorForState:UIControlStateHighlighted];
+        XCTAssertEqualObjects(buttonColor, [UIColor yellowColor]);
     }];
 }
 

@@ -27,10 +27,10 @@
             @3.0f,
             @4.0f];
     id converted = [self.converter convertValue:value];
-    XCTAssertEqual([converted CGRectValue], CGRectMake(1, 2, 3, 4), nil);
+    XCTAssertTrue(CGRectEqualToRect([converted CGRectValue], CGRectMake(1, 2, 3, 4)));
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, @"CGRectMake(1.0, 2.0, 3.0, 4.0)", nil);
+    XCTAssertEqualObjects(code, @"CGRectMake(1.0, 2.0, 3.0, 4.0)");
 }
 
 @end

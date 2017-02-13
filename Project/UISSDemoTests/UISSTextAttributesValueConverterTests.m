@@ -17,8 +17,8 @@
     [self testValue:@{@"font" : @14.0f}
        expectedCode:[NSString stringWithFormat:@"[NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:14.0], UITextAttributeFont, nil]"]
         assertBlock:^(NSDictionary *attributes) {
-            UIFont *font = attributes[UITextAttributeFont];
-            XCTAssertEqualObjects(font, [UIFont systemFontOfSize:14], nil);
+            UIFont *font = attributes[NSFontAttributeName];
+            XCTAssertEqualObjects(font, [UIFont systemFontOfSize:14]);
         }];
 }
 
@@ -26,37 +26,27 @@
     [self testValue:@{@"textColor" : @"orange"}
        expectedCode:[NSString stringWithFormat:@"[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor], UITextAttributeTextColor, nil]"]
         assertBlock:^(NSDictionary *attributes) {
-            UIColor *color = attributes[UITextAttributeTextColor];
-            XCTAssertEqualObjects(color, [UIColor orangeColor], nil);
+            UIColor *color = attributes[NSForegroundColorAttributeName];
+            XCTAssertEqualObjects(color, [UIColor orangeColor]);
         }];
 }
 
-- (void)testTextAttributesWithTextShadowColor; {
-    [self testValue:@{@"textShadowColor" : @"gray"}
-       expectedCode:[NSString stringWithFormat:@"[NSDictionary dictionaryWithObjectsAndKeys:[UIColor grayColor], UITextAttributeTextShadowColor, nil]"]
+- (void)testTextAttributesWithBackgroundColor; {
+    [self testValue:@{@"backgroundColor" : @"orange"}
+       expectedCode:[NSString stringWithFormat:@"[NSDictionary dictionaryWithObjectsAndKeys:[UIColor orangeColor], UITextAttributeBackgroundColor, nil]"]
         assertBlock:^(NSDictionary *attributes) {
-            UIColor *color = attributes[UITextAttributeTextShadowColor];
-            XCTAssertEqualObjects(color, [UIColor grayColor], nil);
-        }];
-}
-
-- (void)testTextAttributesWithTextShadowOffset; {
-    [self testValue:@{@"textShadowOffset" : @[@2.0f]}
-       expectedCode:[NSString stringWithFormat:@"[NSDictionary dictionaryWithObjectsAndKeys:[NSValue valueWithUIOffset:UIOffsetMake(2.0, 2.0)], UITextAttributeTextShadowOffset, nil]"]
-        assertBlock:^(NSDictionary *attributes) {
-            XCTAssertNotNil(attributes[UITextAttributeTextShadowOffset], nil);
-            UIOffset offset = [attributes[UITextAttributeTextShadowOffset] UIOffsetValue];
-            XCTAssertEqual(offset, UIOffsetMake(2, 2), nil);
+            UIColor *color = attributes[NSBackgroundColorAttributeName];
+            XCTAssertEqualObjects(color, [UIColor orangeColor]);
         }];
 }
 
 - (void)testValue:(id)value expectedCode:(NSString *)expectedCode assertBlock:(void (^)(NSDictionary *))assertBlock; {
     NSDictionary *attributes = [self.converter convertValue:value];
-    XCTAssertNotNil(attributes, nil);
+    XCTAssertNotNil(attributes);
     assertBlock(attributes);
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 - (void)setUp; {

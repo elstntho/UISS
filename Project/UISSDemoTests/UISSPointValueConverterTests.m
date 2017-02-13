@@ -32,10 +32,10 @@
 
 - (void)testValue:(id)value expectedPoint:(CGPoint)expectedPoint expectedCode:(NSString *)expectedCode; {
     id converted = [self.converter convertValue:value];
-    XCTAssertEqual([converted CGPointValue], expectedPoint, nil);
+    XCTAssertTrue(CGPointEqualToPoint([converted CGPointValue], expectedPoint));
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 @end

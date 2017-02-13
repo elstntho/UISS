@@ -29,11 +29,11 @@
 
     NSString *code = [self.codeGenerator generateCodeForPropertySetters:@[propertySetter] errors:errors];
 
-    XCTAssertNotNil(code, nil);
-    XCTAssertEqual(errors.count, (NSUInteger) 0, nil);
+    XCTAssertNotNil(code);
+    XCTAssertEqual(errors.count, (NSUInteger) 0);
 
     NSString *expectedCode = [NSString stringWithFormat:@"// Group\n%@\n", [propertySetter generatedCode]];
-    XCTAssertEqualObjects(code, expectedCode, nil);
+    XCTAssertEqualObjects(code, expectedCode);
 }
 
 - (void)setUp; {

@@ -15,20 +15,20 @@
 
 - (void)testNullImage; {
     UIImage *image = [self.converter convertValue:[NSNull null]];
-    XCTAssertNil(image, nil);
+    XCTAssertNil(image);
 
     NSString *code = [self.converter generateCodeForValue:[NSNull null]];
-    XCTAssertEqualObjects(code, @"nil", nil);
+    XCTAssertEqualObjects(code, @"nil");
 }
 
 - (void)testSimleImageAsString; {
     UIImage *image = [self.converter convertValue:@"background"];
 
-    XCTAssertNotNil(image, nil);
-    XCTAssertEqualObjects(image, [UIImage imageNamed:@"background"], nil);
+    XCTAssertNotNil(image);
+    XCTAssertEqualObjects(image, [UIImage imageNamed:@"background"]);
 
     NSString *code = [self.converter generateCodeForValue:@"background"];
-    XCTAssertEqualObjects(code, @"[UIImage imageNamed:@\"background\"]", nil);
+    XCTAssertEqualObjects(code, @"[UIImage imageNamed:@\"background\"]");
 }
 
 - (void)testResizableWithEdgeInsetsDefinedInSubarray; {
@@ -36,18 +36,18 @@
 
     UIImage *image = [self.converter convertValue:value];
 
-    XCTAssertNotNil(image, nil);
-    XCTAssertEqual(image.capInsets, UIEdgeInsetsMake(1, 2, 3, 4), nil);
+    XCTAssertNotNil(image);
+    XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(image.capInsets, UIEdgeInsetsMake(1, 2, 3, 4)));
 
     NSString *code = [self.converter generateCodeForValue:value];
-    XCTAssertEqualObjects(code, @"[[UIImage imageNamed:@\"background\"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 2.0, 3.0, 4.0)]", nil);
+    XCTAssertEqualObjects(code, @"[[UIImage imageNamed:@\"background\"] resizableImageWithCapInsets:UIEdgeInsetsMake(1.0, 2.0, 3.0, 4.0)]");
 }
 
 - (void)testResizableDefinedInOneArray; {
     UIImage *image = [self.converter convertValue:@[@"background", @1.0f, @2.0f, @3.0f, @4.0f]];
 
-    XCTAssertNotNil(image, nil);
-    XCTAssertEqual(image.capInsets, UIEdgeInsetsMake(1, 2, 3, 4), nil);
+    XCTAssertNotNil(image);
+    XCTAssertTrue(UIEdgeInsetsEqualToEdgeInsets(image.capInsets, UIEdgeInsetsMake(1, 2, 3, 4)));
 }
 
 - (void)setUp; {

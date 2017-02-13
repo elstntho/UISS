@@ -35,18 +35,18 @@
         NSArray *array = (NSArray *) value;
         
         if (array.count > 0) {
-            width = [[array objectAtIndex:0] floatValue];
+            width = [[array objectAtIndex:0] doubleValue];
         }
         
         if (array.count > 1) {
-            height = [[array objectAtIndex:1] floatValue];
+            height = [[array objectAtIndex:1] doubleValue];
         } else {
             height = width;
         }
         
         return [NSValue valueWithCGSize:CGSizeMake(width, height)];
     } else if ([value isKindOfClass:[NSNumber class]]) {
-        return [NSValue valueWithCGSize:CGSizeMake([value floatValue], [value floatValue])];
+        return [NSValue valueWithCGSize:CGSizeMake([value doubleValue], [value doubleValue])];
     }
     
     return nil;
