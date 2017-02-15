@@ -39,7 +39,7 @@
 
 - (void)updateLayout;
 {
-    self.frame = [self frameForOrientation:[UIApplication sharedApplication].statusBarOrientation];
+    self.frame = [UIApplication sharedApplication].statusBarFrame;
     self.rootViewController.view.frame = self.bounds;
 }
 

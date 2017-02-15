@@ -177,6 +177,8 @@
 		E1F48246156259FE00CFA72E /* UISSUIntegerValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */; };
 		E1F6E2F4157EC35B00A5187E /* UISSStatusWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E1F6E2F2157EC35B00A5187E /* UISSStatusWindow.h */; };
 		E1F6E2F5157EC35B00A5187E /* UISSStatusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F6E2F3157EC35B00A5187E /* UISSStatusWindow.m */; };
+		E3215B741E54FC86009C21BD /* UISSBooleanValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */; };
+		E3215B751E54FC86009C21BD /* UISSBooleanValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +380,8 @@
 		E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UISSUIntegerValueConverter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E1F6E2F2157EC35B00A5187E /* UISSStatusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSStatusWindow.h; sourceTree = "<group>"; };
 		E1F6E2F3157EC35B00A5187E /* UISSStatusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSStatusWindow.m; sourceTree = "<group>"; };
+		E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSBooleanValueConverter.h; sourceTree = "<group>"; };
+		E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSBooleanValueConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -575,6 +579,8 @@
 				E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */,
 				E12DA0D7155ABE5E0066CCC3 /* UISSFloatValueConverter.h */,
 				E12DA0D8155ABE5E0066CCC3 /* UISSFloatValueConverter.m */,
+				E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */,
+				E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */,
 			);
 			name = "Simple Types";
 			sourceTree = "<group>";
@@ -972,6 +978,7 @@
 				E1C67BD6158CCBD800E220BB /* UISSGeneratedCodeViewController.h in Headers */,
 				E1C08347158E334E007A88E6 /* UISSError.h in Headers */,
 				E1F35EB11593A3F20074389E /* UIView+UISS.h in Headers */,
+				E3215B741E54FC86009C21BD /* UISSBooleanValueConverter.h in Headers */,
 				E18C7C1F158F52B1000D45AC /* UISSErrorsViewController.h in Headers */,
 				E1914CAF158F99BB00E04977 /* UISSStyle.h in Headers */,
 				E1BBEBEF1598776D001F7A60 /* UISSStatusView.h in Headers */,
@@ -1148,6 +1155,7 @@
 				E146985B155A85EC000F311F /* UISSParser.m in Sources */,
 				E12DA0B1155A9D410066CCC3 /* UISSSizeValueConverter.m in Sources */,
 				E12DA0B5155A9D550066CCC3 /* UISSRectValueConverter.m in Sources */,
+				E3215B751E54FC86009C21BD /* UISSBooleanValueConverter.m in Sources */,
 				E12DA0BF155AB88F0066CCC3 /* UISSEdgeInsetsValueConverter.m in Sources */,
 				E12DA0C3155AB8A50066CCC3 /* UISSOffsetValueConverter.m in Sources */,
 				E12DA0CE155ABCF40066CCC3 /* UISSPointValueConverter.m in Sources */,
@@ -1309,7 +1317,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1334,7 +1342,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

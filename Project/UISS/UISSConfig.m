@@ -15,6 +15,7 @@
 #import "UISSIntegerValueConverter.h"
 #import "UISSUIntegerValueConverter.h"
 #import "UISSFloatValueConverter.h"
+#import "UISSBooleanValueConverter.h"
 #import "UISSBarMetricsValueConverter.h"
 #import "UISSControlStateValueConverter.h"
 #import "UISSSegmentedControlSegmentValueConverter.h"
@@ -57,6 +58,7 @@
                             [[UISSIntegerValueConverter alloc] init],
                             [[UISSUIntegerValueConverter alloc] init],
                             [[UISSFloatValueConverter alloc] init],
+                            [[UISSBooleanValueConverter alloc] init],
                             nil];
 }
 
@@ -71,6 +73,7 @@
 
                             [[UISSIntegerValueConverter alloc] init],
                             [[UISSUIntegerValueConverter alloc] init],
+                            [[UISSBooleanValueConverter alloc] init],
                             nil];
 }
 
