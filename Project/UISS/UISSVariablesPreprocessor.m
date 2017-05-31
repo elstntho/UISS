@@ -127,7 +127,7 @@ typedef id (^ResolveBlock)(NSString *);
     }
 }
 
-- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom;
+- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom baseUrl:(NSURL *)url
 {
     // clean up
     [self.variables removeAllObjects];

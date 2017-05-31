@@ -100,7 +100,9 @@
         
         self.errors = errors;
         self.textView.text = code;
-        
+#ifdef DEBUG
+        NSLog(@"code = %@",code);
+#endif
         segmentedControl.enabled = YES;
     }];
 }

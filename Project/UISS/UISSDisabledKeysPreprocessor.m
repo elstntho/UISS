@@ -15,14 +15,14 @@
     return self;
 }
 
-- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom;
+- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom baseUrl:(NSURL *)baseUrl
 {
     NSMutableDictionary *preprocessed = [NSMutableDictionary dictionary];
     
     [dictionary enumerateKeysAndObjectsUsingBlock:^(NSString *key, id object, BOOL *stop) {
         if ([key hasPrefix:self.prefix] == NO) {
             if ([object isKindOfClass:[NSDictionary class]]) {
-                object = [self preprocess:object userInterfaceIdiom:userInterfaceIdiom];
+                object = [self preprocess:object userInterfaceIdiom:userInterfaceIdiom baseUrl:baseUrl];
             }
 
             [preprocessed setObject:object forKey:key];

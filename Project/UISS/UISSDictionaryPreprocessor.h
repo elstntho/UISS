@@ -6,6 +6,6 @@
 
 @protocol UISSDictionaryPreprocessor <NSObject>
 
-- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom;
+- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom baseUrl:(NSURL *)baseUrl;
 
 @end

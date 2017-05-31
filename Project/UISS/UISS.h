@@ -31,6 +31,8 @@ extern NSString *const UISSDidRefreshViewsNotification;
 
 - (void)presentConsoleViewController;
 
+- (void)refreshViews;
+
 #pragma mark - Factory Methods
 
 + (UISS *)configureWithJSONFilePath:(NSString *)filePath;

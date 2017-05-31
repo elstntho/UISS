@@ -177,6 +177,19 @@
 		E1F48246156259FE00CFA72E /* UISSUIntegerValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */; };
 		E1F6E2F4157EC35B00A5187E /* UISSStatusWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = E1F6E2F2157EC35B00A5187E /* UISSStatusWindow.h */; };
 		E1F6E2F5157EC35B00A5187E /* UISSStatusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = E1F6E2F3157EC35B00A5187E /* UISSStatusWindow.m */; };
+		E311580C1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E311580A1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.h */; };
+		E311580D1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E311580B1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.m */; };
+		E31328C61E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E31328C41E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.h */; };
+		E31328C71E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E31328C51E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.m */; };
+		E3215B741E54FC86009C21BD /* UISSBooleanValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */; };
+		E3215B751E54FC86009C21BD /* UISSBooleanValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */; };
+		E3A54CAC1E76917000F01E3D /* UISSDictionaryValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3A54CAA1E76917000F01E3D /* UISSDictionaryValueConverter.h */; };
+		E3A54CAD1E76917000F01E3D /* UISSDictionaryValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3A54CAB1E76917000F01E3D /* UISSDictionaryValueConverter.m */; };
+		E3C71AD41E69473700B03685 /* UISSIncludePreprocessor.h in Headers */ = {isa = PBXBuildFile; fileRef = E3C71AD21E69473700B03685 /* UISSIncludePreprocessor.h */; };
+		E3C71AD51E69473700B03685 /* UISSIncludePreprocessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E3C71AD31E69473700B03685 /* UISSIncludePreprocessor.m */; };
+		E3C71AD71E694AF100B03685 /* include.json in Resources */ = {isa = PBXBuildFile; fileRef = E3C71AD61E694AF100B03685 /* include.json */; };
+		E3F69A4F1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F69A4D1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.h */; };
+		E3F69A501E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = E3F69A4E1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -378,6 +391,19 @@
 		E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = UISSUIntegerValueConverter.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		E1F6E2F2157EC35B00A5187E /* UISSStatusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSStatusWindow.h; sourceTree = "<group>"; };
 		E1F6E2F3157EC35B00A5187E /* UISSStatusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSStatusWindow.m; sourceTree = "<group>"; };
+		E311580A1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSScrollViewIndicatorStyleValueConverter.h; sourceTree = "<group>"; };
+		E311580B1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSScrollViewIndicatorStyleValueConverter.m; sourceTree = "<group>"; };
+		E31328C41E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSFontTextStyleValueConverter.h; sourceTree = "<group>"; };
+		E31328C51E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSFontTextStyleValueConverter.m; sourceTree = "<group>"; };
+		E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSBooleanValueConverter.h; sourceTree = "<group>"; };
+		E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSBooleanValueConverter.m; sourceTree = "<group>"; };
+		E3A54CAA1E76917000F01E3D /* UISSDictionaryValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSDictionaryValueConverter.h; sourceTree = "<group>"; };
+		E3A54CAB1E76917000F01E3D /* UISSDictionaryValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSDictionaryValueConverter.m; sourceTree = "<group>"; };
+		E3C71AD21E69473700B03685 /* UISSIncludePreprocessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSIncludePreprocessor.h; sourceTree = "<group>"; };
+		E3C71AD31E69473700B03685 /* UISSIncludePreprocessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSIncludePreprocessor.m; sourceTree = "<group>"; };
+		E3C71AD61E694AF100B03685 /* include.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = include.json; sourceTree = "<group>"; };
+		E3F69A4D1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UISSKeyboardAppearanceValueConverter.h; sourceTree = "<group>"; };
+		E3F69A4E1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UISSKeyboardAppearanceValueConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,8 +514,12 @@
 				E146984D1559B24C000F311F /* UISSImageValueConverter.m */,
 				E146984215590709000F311F /* UISSFontValueConverter.h */,
 				E146984315590709000F311F /* UISSFontValueConverter.m */,
+				E31328C41E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.h */,
+				E31328C51E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.m */,
 				E1469850155A6D0E000F311F /* UISSTextAttributesValueConverter.h */,
 				E1469851155A6D0E000F311F /* UISSTextAttributesValueConverter.m */,
+				E3A54CAA1E76917000F01E3D /* UISSDictionaryValueConverter.h */,
+				E3A54CAB1E76917000F01E3D /* UISSDictionaryValueConverter.m */,
 			);
 			name = Objects;
 			sourceTree = "<group>";
@@ -524,6 +554,10 @@
 				C8D2B85B301B08AE70AFFFB7 /* UISSImageResizingModeValueConverter.h */,
 				C8D2B46579BB4A74DA7B5D27 /* UISSTextAlignmentValueConverter.m */,
 				C8D2B9582FDA98878B10CBA5 /* UISSTextAlignmentValueConverter.h */,
+				E3F69A4D1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.h */,
+				E3F69A4E1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.m */,
+				E311580A1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.h */,
+				E311580B1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.m */,
 			);
 			name = "UIKit Enums";
 			sourceTree = "<group>";
@@ -575,6 +609,8 @@
 				E1F48244156259FE00CFA72E /* UISSUIntegerValueConverter.m */,
 				E12DA0D7155ABE5E0066CCC3 /* UISSFloatValueConverter.h */,
 				E12DA0D8155ABE5E0066CCC3 /* UISSFloatValueConverter.m */,
+				E3215B721E54FC86009C21BD /* UISSBooleanValueConverter.h */,
+				E3215B731E54FC86009C21BD /* UISSBooleanValueConverter.m */,
 			);
 			name = "Simple Types";
 			sourceTree = "<group>";
@@ -616,6 +652,7 @@
 		E146981715583145000F311F /* UISS */ = {
 			isa = PBXGroup;
 			children = (
+				E3C71AD61E694AF100B03685 /* include.json */,
 				E146981815583167000F311F /* uiss.json */,
 			);
 			path = UISS;
@@ -857,6 +894,8 @@
 				E15B384A1572579F005BFF73 /* UISSUserInterfaceIdiomPreprocessor.m */,
 				E17E43BB159A6B4200DFBB26 /* UISSDisabledKeysPreprocessor.h */,
 				E17E43BC159A6B4200DFBB26 /* UISSDisabledKeysPreprocessor.m */,
+				E3C71AD21E69473700B03685 /* UISSIncludePreprocessor.h */,
+				E3C71AD31E69473700B03685 /* UISSIncludePreprocessor.m */,
 			);
 			name = Preprocessors;
 			sourceTree = "<group>";
@@ -962,9 +1001,11 @@
 				E116AF27157ABBA900BFB3D1 /* UISSArgument.h in Headers */,
 				E116AF2B157ABBCA00BFB3D1 /* UISSProperty.h in Headers */,
 				E116AF2F157ABBE000BFB3D1 /* UISSAxisParameter.h in Headers */,
+				E31328C61E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.h in Headers */,
 				E1F6E2F4157EC35B00A5187E /* UISSStatusWindow.h in Headers */,
 				E1BCCC35157F634B001E4429 /* UISSConsoleViewController.h in Headers */,
 				E1076BEA157F6B1A00886759 /* UISSStatusViewController.h in Headers */,
+				E3C71AD41E69473700B03685 /* UISSIncludePreprocessor.h in Headers */,
 				E145C8581584AF820087BB1B /* NSString+UISS.h in Headers */,
 				E145C8631584DCC70087BB1B /* UISSConfig.h in Headers */,
 				E13B646615890CC800E3613B /* UISSArgumentValueConverter.h in Headers */,
@@ -972,7 +1013,9 @@
 				E1C67BD6158CCBD800E220BB /* UISSGeneratedCodeViewController.h in Headers */,
 				E1C08347158E334E007A88E6 /* UISSError.h in Headers */,
 				E1F35EB11593A3F20074389E /* UIView+UISS.h in Headers */,
+				E3215B741E54FC86009C21BD /* UISSBooleanValueConverter.h in Headers */,
 				E18C7C1F158F52B1000D45AC /* UISSErrorsViewController.h in Headers */,
+				E3F69A4F1E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.h in Headers */,
 				E1914CAF158F99BB00E04977 /* UISSStyle.h in Headers */,
 				E1BBEBEF1598776D001F7A60 /* UISSStatusView.h in Headers */,
 				E17E43BD159A6B4200DFBB26 /* UISSDisabledKeysPreprocessor.h in Headers */,
@@ -982,9 +1025,11 @@
 				C8D2BABA25A2F8B6734D5E39 /* UISSImageResizingModeValueConverter.h in Headers */,
 				C8D2B2E56583BF0D585ECFC4 /* UISSSettingsViewController.h in Headers */,
 				C8D2B032C59FD11A701C83C8 /* UISSSettingDescriptor.h in Headers */,
+				E311580C1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.h in Headers */,
 				C8D2B5AED4BB2B1D68E5BA5C /* UISS+GestureRecognizers.h in Headers */,
 				E1C64FF616DFE8AF004861ED /* UISSMacros.h in Headers */,
 				C8D2BEB7BAC6C878B58BC1A9 /* UISSTextAlignmentValueConverter.h in Headers */,
+				E3A54CAC1E76917000F01E3D /* UISSDictionaryValueConverter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1051,7 +1096,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0700;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = 57things;
 				TargetAttributes = {
 					E1ED8BE01450D4E100302B61 = {
@@ -1104,6 +1149,7 @@
 				E10D5E591574BBA400185009 /* Icon-Small.png in Resources */,
 				E10D5E5A1574BBA400185009 /* Icon-Small@2x.png in Resources */,
 				E10D5E5B1574BBA400185009 /* Icon.png in Resources */,
+				E3C71AD71E694AF100B03685 /* include.json in Resources */,
 				E10D5E5C1574BBA400185009 /* Icon@2x.png in Resources */,
 				E10D5E5D1574BBA400185009 /* iTunesArtwork.png in Resources */,
 				E10D5E5E1574BBA400185009 /* iTunesArtwork@2x.png in Resources */,
@@ -1148,9 +1194,11 @@
 				E146985B155A85EC000F311F /* UISSParser.m in Sources */,
 				E12DA0B1155A9D410066CCC3 /* UISSSizeValueConverter.m in Sources */,
 				E12DA0B5155A9D550066CCC3 /* UISSRectValueConverter.m in Sources */,
+				E3215B751E54FC86009C21BD /* UISSBooleanValueConverter.m in Sources */,
 				E12DA0BF155AB88F0066CCC3 /* UISSEdgeInsetsValueConverter.m in Sources */,
 				E12DA0C3155AB8A50066CCC3 /* UISSOffsetValueConverter.m in Sources */,
 				E12DA0CE155ABCF40066CCC3 /* UISSPointValueConverter.m in Sources */,
+				E3A54CAD1E76917000F01E3D /* UISSDictionaryValueConverter.m in Sources */,
 				E12DA0D6155ABE500066CCC3 /* UISSIntegerValueConverter.m in Sources */,
 				E12DA0DA155ABE5E0066CCC3 /* UISSFloatValueConverter.m in Sources */,
 				E1F48246156259FE00CFA72E /* UISSUIntegerValueConverter.m in Sources */,
@@ -1161,6 +1209,8 @@
 				E1A7739915668F80000406CC /* UILabel+UISS.m in Sources */,
 				E1A775B31566E8D6000406CC /* UISSToolbarPositionValueConverter.m in Sources */,
 				E1A775BD1567945D000406CC /* UISSVariablesPreprocessor.m in Sources */,
+				E31328C71E5E0BDD00761AD0 /* UISSFontTextStyleValueConverter.m in Sources */,
+				E3C71AD51E69473700B03685 /* UISSIncludePreprocessor.m in Sources */,
 				E116C4F3156E7E4200CA1BCB /* UISSSearchBarIconValueConverter.m in Sources */,
 				E15B384C1572579F005BFF73 /* UISSUserInterfaceIdiomPreprocessor.m in Sources */,
 				E116AF23157AA24E00BFB3D1 /* UISSPropertySetter.m in Sources */,
@@ -1175,6 +1225,7 @@
 				E1C67BD7158CCBD800E220BB /* UISSGeneratedCodeViewController.m in Sources */,
 				E1C08348158E334E007A88E6 /* UISSError.m in Sources */,
 				E1F35EB21593A3F20074389E /* UIView+UISS.m in Sources */,
+				E3F69A501E8054900068A4B8 /* UISSKeyboardAppearanceValueConverter.m in Sources */,
 				E18C7C20158F52B1000D45AC /* UISSErrorsViewController.m in Sources */,
 				E1914CB0158F99BB00E04977 /* UISSStyle.m in Sources */,
 				E1BBEBF01598776D001F7A60 /* UISSStatusView.m in Sources */,
@@ -1187,6 +1238,7 @@
 				C8D2BF2ADDB11891AE3310FA /* UISSSettingDescriptor.m in Sources */,
 				C8D2BA99525048D454BCA45D /* UISS+GestureRecognizers.m in Sources */,
 				C8D2BCA04FA368B1EF9B6692 /* UISSTextAlignmentValueConverter.m in Sources */,
+				E311580D1EA74C730098C447 /* UISSScrollViewIndicatorStyleValueConverter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,24 +1344,36 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1324,17 +1388,27 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

@@ -10,6 +10,7 @@
 @interface UISSFontValueConverter ()
 
 @property(nonatomic, strong) UISSFloatValueConverter *floatValueConverter;
+@property(nonatomic, strong) NSDictionary *fontWeightDict;
 
 @end
 
@@ -19,22 +20,31 @@
     self = [super init];
     if (self) {
         self.floatValueConverter = [[UISSFloatValueConverter alloc] init];
+        self.fontWeightDict = @{  @"ultraLight" : @(UIFontWeightUltraLight),// -0.80
+                                  @"thin" : @(UIFontWeightThin),            // -0.60
+                                  @"light" : @(UIFontWeightLight),          // -0.40
+                                  @"regular" : @(UIFontWeightRegular),      //  0
+                                  @"medium" : @(UIFontWeightMedium),        //  0.23
+                                  @"semiBold" : @(UIFontWeightSemibold),    //  0.30
+                                  @"bold" : @(UIFontWeightBold),            //  0.40
+                                  @"heavy" : @(UIFontWeightHeavy)           //  0.56
+                               };
     }
     return self;
 }
 
 - (BOOL)canConvertValueForArgument:(UISSArgument *)argument {
-    return [argument.type hasPrefix:@"@"] && [[argument.name lowercaseString] hasSuffix:@"font"];
+    return [argument.type hasPrefix:@"@"] && [[argument.name lowercaseString] hasSuffix:@"font"] && [argument.value isKindOfClass:[NSArray class]];
 }
 
-- (BOOL)fontFromSelectorString:(NSString *)selectorString fontHandler:(void (^)(UIFont *))fontHandler codeHandler:(void (^)(NSString *))codeHandler fontSize:(CGFloat)fontSize {
+- (BOOL)fontFromSelectorString:(NSString *)selectorString fontHandler:(void (^)(UIFont *))fontHandler codeHandler:(void (^)(NSString *))codeHandler fontSize:(CGFloat)fontSize fontWeight:(CGFloat)fontWeight {
     if (![selectorString hasSuffix:@"Font"]) {
         selectorString = [selectorString stringByAppendingString:@"Font"];
     }
 
     selectorString = [selectorString stringByAppendingString:@"OfSize:"];
 
-    SEL fontSelector = NSSelectorFromString(selectorString);
+    SEL fontSelector = ([selectorString hasPrefix:@"system"]) ? NSSelectorFromString([selectorString stringByAppendingString:@"weight:"]) : NSSelectorFromString(selectorString);
 
     if ([UIFont respondsToSelector:fontSelector]) {
         if (fontHandler) {
@@ -43,8 +53,11 @@
 
             invocation.selector = fontSelector;
             invocation.target = [UIFont class];
-
+            
             [invocation setArgument:&fontSize atIndex:2];
+            if([selectorString hasPrefix:@"system"]) {
+                [invocation setArgument:&fontWeight atIndex:3];
+            }
 
             [invocation invoke];
             
@@ -55,7 +68,12 @@
         }
 
         if (codeHandler) {
-            codeHandler([NSString stringWithFormat:@"[UIFont %@%.1f]", selectorString, fontSize]);
+            if([selectorString hasPrefix:@"system"]) {
+                codeHandler([NSString stringWithFormat:@"[UIFont %@%.1f weight:%f]", selectorString, fontSize, fontWeight]);
+            } else {
+                codeHandler([NSString stringWithFormat:@"[UIFont %@%.1f]", selectorString, fontSize]);
+            }
+            
         }
 
         return YES;
@@ -67,28 +85,32 @@
 - (BOOL)convertValue:(id)value fontHandler:(void (^)(UIFont *))fontHandler codeHandler:(void (^)(NSString *))codeHandler {
     CGFloat fontSize = [UIFont systemFontSize];
     NSString *fontName = @"system";
-
+    CGFloat fontWeight = UIFontWeightRegular;
+    
     if ([value isKindOfClass:[NSArray class]]) {
         NSArray *array = (NSArray *) value;
 
         if (array.count && [array[0] isKindOfClass:[NSString class]]) {
             fontName = array[0];
+        } else if (array.count == 1 && [array canConvertToFloatObjectAtIndex:0]) {
+            fontSize = [array[0] doubleValue];
         }
 
-        if ([array canConvertToFloatObjectAtIndex:1]) {
+        if (array.count == 2 && [array canConvertToFloatObjectAtIndex:1]) {
             fontSize = [array[1] doubleValue];
         }
-    } else if ([value isKindOfClass:[NSNumber class]]) {
-        fontSize = [value doubleValue];
-    } else if ([value isKindOfClass:[NSString class]]) {
-        fontName = value;
     }
-
-    if ([fontName isEqualToString:@"bold"] || [fontName isEqualToString:@"italic"]) {
-        fontName = [fontName stringByAppendingString:@"System"];
+    
+    if ([fontName isEqualToString:@"italic"]) {
+        fontName = [fontName stringByAppendingString:@"System"]; // we call "italicSystemFontOfSize:" later
+        
+    } else if (self.fontWeightDict[fontName]){ // we call "systemFontOfSize:weight:" later
+        fontWeight = [self.fontWeightDict[fontName] doubleValue];
+        fontName = @"system";
     }
+    
 
-    if ([self fontFromSelectorString:fontName fontHandler:fontHandler codeHandler:codeHandler fontSize:fontSize]) {
+    if ([self fontFromSelectorString:fontName fontHandler:fontHandler codeHandler:codeHandler fontSize:fontSize fontWeight:fontWeight]) {
         return YES;
     } else {
         if (fontHandler) {

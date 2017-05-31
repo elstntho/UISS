@@ -141,6 +141,11 @@ NSString *const UISSStyleDidParseDictionaryNotification = @"UISSStyleDidParseDic
     BOOL dictionaryParsed = NO;
 
     UISSParser *parser = [[UISSParser alloc] init];
+    if (self.url.fileURL) {
+        parser.baseUrl = self.url.URLByDeletingLastPathComponent;
+    } else {
+        parser.baseUrl = self.url.baseURL;
+    }
     parser.userInterfaceIdiom = userInterfaceIdiom;
     parser.config = config;
 

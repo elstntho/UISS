@@ -128,7 +128,7 @@
     UISSParserContext *context = [[UISSParserContext alloc] init];
 
     for (id <UISSDictionaryPreprocessor> preprocessor in self.config.preprocessors) {
-        dictionary = [preprocessor preprocess:dictionary userInterfaceIdiom:self.userInterfaceIdiom];
+        dictionary = [preprocessor preprocess:dictionary userInterfaceIdiom:self.userInterfaceIdiom baseUrl:self.baseUrl];
     }
 
     [self parseDictionary:dictionary context:context];

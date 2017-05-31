@@ -42,8 +42,8 @@
 
 - (void)testDefaultSystemBoldFont {
     [self testValue:@[@"bold", @14.0f]
-       expectedFont:[UIFont boldSystemFontOfSize:14]
-       expectedCode:@"[UIFont boldSystemFontOfSize:14.0]"];
+       expectedFont:[UIFont systemFontOfSize:14 weight:UIFontWeightBold]
+       expectedCode:@"[UIFont systemFontOfSize:14.0 weight:0.4000000059604645]"];
 }
 
 - (void)testCustomFactorySelectorWithoutSize {

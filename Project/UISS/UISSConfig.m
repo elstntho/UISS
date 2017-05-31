@@ -6,7 +6,9 @@
 #import "UISSColorValueConverter.h"
 #import "UISSImageValueConverter.h"
 #import "UISSFontValueConverter.h"
+#import "UISSFontTextStyleValueConverter.h"
 #import "UISSTextAttributesValueConverter.h"
+#import "UISSDictionaryValueConverter.h"
 #import "UISSSizeValueConverter.h"
 #import "UISSPointValueConverter.h"
 #import "UISSEdgeInsetsValueConverter.h"
@@ -15,15 +17,19 @@
 #import "UISSIntegerValueConverter.h"
 #import "UISSUIntegerValueConverter.h"
 #import "UISSFloatValueConverter.h"
+#import "UISSBooleanValueConverter.h"
 #import "UISSBarMetricsValueConverter.h"
 #import "UISSControlStateValueConverter.h"
 #import "UISSSegmentedControlSegmentValueConverter.h"
 #import "UISSToolbarPositionValueConverter.h"
 #import "UISSSearchBarIconValueConverter.h"
+#import "UISSIncludePreprocessor.h"
 #import "UISSUserInterfaceIdiomPreprocessor.h"
 #import "UISSVariablesPreprocessor.h"
 #import "UISSDisabledKeysPreprocessor.h"
 #import "UISSTextAlignmentValueConverter.h"
+#import "UISSKeyboardAppearanceValueConverter.h"
+#import "UISSScrollViewIndicatorStyleValueConverter.h"
 
 @implementation UISSConfig
 
@@ -44,7 +50,9 @@
                             [[UISSColorValueConverter alloc] init],
                             [[UISSImageValueConverter alloc] init],
                             [[UISSFontValueConverter alloc] init],
+                            [[UISSFontTextStyleValueConverter alloc] init],
                             [[UISSTextAttributesValueConverter alloc] init],
+                            [[UISSDictionaryValueConverter alloc] init],
 
                             [[UISSSizeValueConverter alloc] init],
                             [[UISSPointValueConverter alloc] init],
@@ -53,10 +61,13 @@
                             [[UISSOffsetValueConverter alloc] init],
             
                             [[UISSTextAlignmentValueConverter alloc] init],
-
+                            [[UISSKeyboardAppearanceValueConverter alloc] init],
+                            [[UISSScrollViewIndicatorStyleValueConverter alloc] init],
+            
                             [[UISSIntegerValueConverter alloc] init],
                             [[UISSUIntegerValueConverter alloc] init],
                             [[UISSFloatValueConverter alloc] init],
+                            [[UISSBooleanValueConverter alloc] init],
                             nil];
 }
 
@@ -71,16 +82,18 @@
 
                             [[UISSIntegerValueConverter alloc] init],
                             [[UISSUIntegerValueConverter alloc] init],
-                            nil];
+                            [[UISSBooleanValueConverter alloc] init],
+            nil];
 }
 
 - (NSArray *)defaultPreprocessors
 {
     return [NSArray arrayWithObjects:
-                            [[UISSDisabledKeysPreprocessor alloc] init],
-                            [[UISSUserInterfaceIdiomPreprocessor alloc] init],
-                            [[UISSVariablesPreprocessor alloc] init],
-                            nil];
+            [[UISSIncludePreprocessor alloc] init],
+            [[UISSDisabledKeysPreprocessor alloc] init],
+            [[UISSUserInterfaceIdiomPreprocessor alloc] init],
+            [[UISSVariablesPreprocessor alloc] init],
+            nil];
 }
 
 - (id)init

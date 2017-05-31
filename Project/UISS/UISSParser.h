@@ -10,6 +10,7 @@
 
 @interface UISSParser : NSObject
 
+@property (nonatomic, strong) NSURL *baseUrl;
 @property (nonatomic, strong) UISSConfig *config;
 @property (nonatomic, assign) UIUserInterfaceIdiom userInterfaceIdiom;
 @property (nonatomic, strong) NSString *groupPrefix;

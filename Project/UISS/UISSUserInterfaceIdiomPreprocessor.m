@@ -6,16 +6,16 @@
 
 @implementation UISSUserInterfaceIdiomPreprocessor
 
-- (id)preprocessValueIfNecessary:(id)value userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom;
+- (id)preprocessValueIfNecessary:(id)value userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom baseUrl:(NSURL *)baseUrl
 {
     if ([value isKindOfClass:[NSDictionary class]]) {
-        return [self preprocess:value userInterfaceIdiom:userInterfaceIdiom];
+        return [self preprocess:value userInterfaceIdiom:userInterfaceIdiom baseUrl:baseUrl];
     } else {
         return value;
     }
 }
 
-- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom;
+- (NSDictionary *)preprocess:(NSDictionary *)dictionary userInterfaceIdiom:(UIUserInterfaceIdiom)userInterfaceIdiom baseUrl:(NSURL *)baseUrl
 {
     NSMutableDictionary *preprocessed = [NSMutableDictionary dictionary];
     
@@ -23,12 +23,12 @@
         UIUserInterfaceIdiom idiom = (UIUserInterfaceIdiom) [self userInterfaceIdiomFromKey:key];
         
         if (idiom == NSNotFound) {
-            [preprocessed setObject:[self preprocessValueIfNecessary:object userInterfaceIdiom:userInterfaceIdiom] forKey:key];
+            [preprocessed setObject:[self preprocessValueIfNecessary:object userInterfaceIdiom:userInterfaceIdiom baseUrl:baseUrl] forKey:key];
         } else {
             if (idiom == userInterfaceIdiom) {
                 // skip everything that's not a dictionary
                 if ([object isKindOfClass:[NSDictionary class]]) {
-                    [preprocessed addEntriesFromDictionary:[self preprocess:object userInterfaceIdiom:userInterfaceIdiom]];
+                    [preprocessed addEntriesFromDictionary:[self preprocess:object userInterfaceIdiom:userInterfaceIdiom baseUrl:baseUrl]];
                 }
             }
         }

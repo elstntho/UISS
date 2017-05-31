@@ -4,6 +4,7 @@
 
 #import "UISSTextAttributesValueConverter.h"
 #import "UISSFontValueConverter.h"
+#import "UISSFontTextStyleValueConverter.h"
 #import "UISSColorValueConverter.h"
 #import "UISSOffsetValueConverter.h"
 #import "UISSArgument.h"
@@ -11,6 +12,7 @@
 @interface UISSTextAttributesValueConverter ()
 
 @property(nonatomic, strong) UISSFontValueConverter *fontConverter;
+@property(nonatomic, strong) UISSFontTextStyleValueConverter *fontTextStyleConverter;
 @property(nonatomic, strong) UISSColorValueConverter *colorConverter;
 
 @end
@@ -22,6 +24,7 @@
     self = [super init];
     if (self) {
         self.fontConverter = [[UISSFontValueConverter alloc] init];
+        self.fontTextStyleConverter = [[UISSFontTextStyleValueConverter alloc] init];
         self.colorConverter = [[UISSColorValueConverter alloc] init];
     }
     return self;
@@ -49,17 +52,23 @@
 {
     if ([value isKindOfClass:[NSDictionary class]]) {
         NSDictionary *dictionary = (NSDictionary *) value;
-
+        
         NSMutableDictionary *attributes = [NSMutableDictionary dictionary];
-        [self convertProperty:UISS_FONT_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSFontAttributeName
-               usingConverter:self.fontConverter];
-
+        
+        if ([dictionary[NSFontAttributeName] isKindOfClass:[NSArray class]]) {
+            [self convertProperty:UISS_FONT_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSFontAttributeName
+                   usingConverter:self.fontConverter];
+        } else if ([dictionary[NSFontAttributeName] isKindOfClass:[NSString class]]) {
+            [self convertProperty:UISS_FONT_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSFontAttributeName
+                   usingConverter:self.fontConverter];
+        }
+        
         [self convertProperty:UISS_TEXT_COLOR_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSForegroundColorAttributeName
                usingConverter:self.colorConverter];
-
+        
         [self convertProperty:UISS_BACKGROUND_COLOR_KEY fromDictionary:dictionary toDictionary:attributes withKey:NSBackgroundColorAttributeName
                usingConverter:self.colorConverter];
-
+        
         if (attributes.count) {
             return attributes;
         }
